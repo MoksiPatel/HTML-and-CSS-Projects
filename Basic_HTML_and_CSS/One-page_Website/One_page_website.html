@@ -1,37 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CARFIX</title>
-<meta charset="utf-8">
+	<title>CARFIX</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="CSS/One_page_website.css">
 </head>
-<nav>
-	<ul>
-	<a href="#home"><li>Home</li></a>
-	<a href="#Services"><li>Services</li></a>
-	<a href="#Contact us"><li>Contact us</li></a>
+<body>
+
+<!---nav-->
+<div class="wrap">
+	<div class="menu-container">
+		<ul class="menu">
+		<a href="#MyGarage"><li>Home</li></a>
+		<a href="#Services"><li>Services</li></a>
+		<a href="#Contactus"><li>Contact us</li></a>
 	</ul>
-</nav>
-<section>
-	<h3> How do we look!</h3>
-	<img src="garage.png" alt="refresh page or contact us" width="400" height="400">
+	</div>
+</div>
+<!---End Nav-->
+
+<!----home-->
+
+<div id="home">
+	<div class="container">
+		<h1>My Garage</h1>
+	</div>
+	<p> We have great set up for your car repairs or great maintenance plans feel free to come and visit us and ask away our staff for any specials.<br>
+		Kindly leave you contact or you can have our weekly flyers at your doorstep.You can see garage set up equipped with latest tools.
+	</p>
+	<img src="garage.png" alt="refresh page or contact us" width="600px" height="300px">
+</div>
+
+<!--end home-->
+<!---services-->
+
+<section class="Services">
+	<h1>LIST OF SERVICES</h1>
+	<p>Oil change<br/>
+	   basic maintenance<br/>
+	   transmission<br/>
+	</p>
+	<h1> FIND OUT MORE IN THIS VIDEO</h1>
+	<iframe src="https://www.youtube.com/embed/8bQ1CcXjnbY" title="click to watch" width="600px" height="300px"></iframe>
 </section>
-<section>
-	<h3> Check our video how we work!</h3>
-	<iframe src="https://www.youtube.com/embed/8bQ1CcXjnbY" title="click to watch"></iframe>
-</section>
-<section>
-	<h3> Contact us</h3>
-	<form action="" method="post">
-		<input class="Contact" type="text" value=" First name">
-		<input class="Contact" type="text" value=" Last name">
-		<input class="Contact" type="text" value=" Email ID">
-		<input class="Contact" type="text" value=" Phone number">
-		<div>
-			<input class="submit" type="submit">
+
+<!-----end services-->
+<!--contactus--->
+
+<Section id="contact">
+	<div class="container">
+		<div class="heading-padding">
+			<h1 class="heading-padding">Appointment</h1>
+			<div class="reservation">
+				<h2><span>You will have your car in great shape here.</span>
+					<br/>Reserve your table today!
+				
+				</h2>
+				<p class="rsvp-text">
+					Please provide us with your basic contact information.
+				</p>
+				<div class="form-rsvp">
+					<form action="" method="post">
+						<input class="rsvp" type="text" value="" placeholder="First Name">
+						<input class="rsvp" type="text" value="" placeholder="Last Name">
+						<input class="rsvp" type="text" value="" placeholder="Email Address">
+						<input class="rsvp" type="text" value="" placeholder="Phone Number">
+						<div class="form-spacer">
+							<label class="terms"> Terms and Condition</label>
+						</div>
+						<div class="submit">
+							<input type="submit" value="submit">
+						</div>
+					</form>
+				</div>
+
+			</div>
 		</div>
-	</form>
-</section>
+	</div>
+</Section>
+
+<!--end contactus-->
+
 <footer>
-<p>www.carfix.fix, 21 london tower,London,32323, UK</p>
+	<p>www.carfix.fix, 21 london tower,London,32323,UK</p>
 </footer>
+</body>
 </html>
