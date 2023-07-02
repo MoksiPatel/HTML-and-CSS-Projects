@@ -3,8 +3,10 @@
 <head>
 	<title>CARFIX</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="CSS/One_page_website.css">
+	<link rel="stylesheet" href="./CSS/one_page_website.css">
+	<!-- <script scr="JS/one_page_website.js"></script> -->
 </head>
+
 <body>
 
 <!---nav-->
@@ -20,7 +22,6 @@
 <!---End Nav-->
 
 <!----home-->
-
 <div id="home">
 	<div class="container">
 		<h1>My Garage</h1>
@@ -28,12 +29,59 @@
 	<p> We have great set up for your car repairs or great maintenance plans feel free to come and visit us and ask away our staff for any specials.<br>
 		Kindly leave you contact or you can have our weekly flyers at your doorstep.You can see garage set up equipped with latest tools.
 	</p>
-	<img src="garage.png" alt="refresh page or contact us" width="600px" height="300px">
+	<div class="row">
+		<div class="column">
+			<img src="garage.png" alt="refresh page or contact us" width="500px" height="200px" onclick="openModal();currentSlide(1)" class="hover-shadow">
+		</div>
+		<div class="column">
+			<img src="carfix.png" alt="refresh page or contact us" width="500px" height="200px" onclick="openModal();currentSlide(2)" class="hover-shadow">
+		</div>
+		<div class="column">
+			<img src="carfix_2.png" alt="refresh page or contact us" width="500px" height="200px" onclick="openModal();currentSlide(3)" class="hover-shadow">
+		</div>
+	</div>
+	<!-- The Modal/Lightbox -->
+	<div id="myModal" class="modal">
+		<span class="close cursor" onclick="closeModal()">&times;</span>
+		<div class="modal-content">
+			<div class="mySlides">
+				<div class="numbertext">1 / 3</div>
+				<img src="garage.png" style="width:100%">
+			</div>
+			<div class="mySlides">
+				<div class="numbertext">2 / 3</div>
+				<img src="carfix.png" style="width:100%">
+			</div>
+			<div class="mySlides">
+				<div class="numbertext">3 / 3</div>
+				<img src="carfix_2.png" style="width:100%">
+			</div>
+			<!-- Next/previous controls -->
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			<!-- Caption text -->
+			<div class="caption-container">
+				<p id="caption"></p>
+			</div>
+			<!-- Thumbnail image controls -->
+			<div class="row">
+				<div class="column">
+					<img class="demo" src="garage.png" onclick="currentSlide(1)" alt="CarFix">
+				</div>
+				<div class="column">
+					<img class="demo" src="carfix.png" onclick="currentSlide(2)" alt="CarFix">
+				</div>
+				<div class="column">
+					<img class="demo" src="carfix_2.png" onclick="currentSlide(3)" alt="CarFix">
+				</div>
+			</div>
+			
+		</div>
+	</div>
 </div>
-
 <!--end home-->
-<!---services-->
 
+<!---services-->
 <section class="Services">
 	<h1>LIST OF SERVICES</h1>
 	<p>Oil change<br/>
@@ -43,10 +91,9 @@
 	<h1> FIND OUT MORE IN THIS VIDEO</h1>
 	<iframe src="https://www.youtube.com/embed/8bQ1CcXjnbY" title="click to watch" width="600px" height="300px"></iframe>
 </section>
-
 <!-----end services-->
-<!--contactus--->
 
+<!--contactus--->
 <Section id="contact">
 	<div class="container">
 		<div class="heading-padding">
@@ -54,7 +101,6 @@
 			<div class="reservation">
 				<h2><span>You will have your car in great shape here.</span>
 					<br/>Reserve your table today!
-				
 				</h2>
 				<p class="rsvp-text">
 					Please provide us with your basic contact information.
@@ -78,7 +124,6 @@
 		</div>
 	</div>
 </Section>
-
 <!--end contactus-->
 
 <footer>
@@ -86,3 +131,46 @@
 </footer>
 </body>
 </html>
+
+<script>
+	// Open the Modal
+	function openModal() {
+	  document.getElementById("myModal").style.display = "block";
+	}
+	
+	// Close the Modal
+	function closeModal() {
+	  document.getElementById("myModal").style.display = "none";
+	}
+	
+	var slideIndex = 1;
+	showSlides(slideIndex);
+	
+	// Next/previous controls
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+	
+	// Thumbnail image controls
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+	
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("demo");
+	  var captionText = document.getElementById("caption");
+	  if (n > slides.length) {slideIndex = 1}
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	  }
+	  for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";
+	  dots[slideIndex-1].className += " active";
+	  captionText.innerHTML = dots[slideIndex-1].alt;
+	}
+	</script>
